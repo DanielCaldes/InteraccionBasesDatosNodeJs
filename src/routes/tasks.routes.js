@@ -25,7 +25,12 @@ export const tasksRoutes = [
         method: "PUT",
         path: `${BASE_PATH}/:id`,
         controller: updateTaskById,
-        description: "Actualizar tarea por id"
+        description: "Actualizar tarea por id",
+        body: {
+            title: "Título de la tarea (obligatorio)",
+            description: "Descripción de la tarea (opcional)",
+            completed: "Estado de la tarea, por defecto false (opcional)"
+        }
     },
     {
         method: "DELETE",
