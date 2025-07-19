@@ -7,7 +7,8 @@ const routes = [...helpRoutes,...tasksRoutes];
 
 function pathToRegex(path) {
     const paramNames = [];
-    const regexPath = path.replace(/:([^\/]+)/g, (_,key) =>{
+    const apiPrefixedPath = `/api${path}`;
+    const regexPath = apiPrefixedPath.replace(/:([^\/]+)/g, (_, key) => {
         paramNames.push(key);
         return "([^\\/]+)";
     });
